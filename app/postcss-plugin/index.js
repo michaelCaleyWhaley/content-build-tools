@@ -49,10 +49,17 @@ module.exports = postcss.plugin('padding', function padding() {
 				//use regex to return the first url in quotes
 				try {
 					let pattern = /(?:'|")(https:\S*)(?:'|")/;
+					let flushPattern = /(\$flush.+)[',]$/igm;
+
 					//[1] returns capture group rather than entire match - ie excludes quotes
-					var imageUrl = params.match(pattern)[1];
+					var imageUrl = params.match(pattern)[1] + '?';
+					// Checks for image flush and inserts if neccessary
+					if(params.match(flushPattern)) {
+						let flushSplit = params.match(flushPattern)[0].split("'");
+						imageUrl = params.match(pattern)[1] + '?' + flushSplit[1] + '&';
+					}
 					//add preset to the image URL so that its height is correct for the calculation
-					let urlWithPreset = imageUrl + "?$retina$";
+					let urlWithPreset = imageUrl + "$retina$";
 					//parse the url ready for http.get
 					let urlObject = url.parse(urlWithPreset);
 
