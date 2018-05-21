@@ -914,7 +914,7 @@ $retina-large : "(min-width: 1441px) and (min-resolution: 192dpi)";
       }
 		
       @if $url != '' {
-        background-image: url('#{$url}?r&$desktop-sm_crop$');
+        background-image: url('#{$url}?#{$flush}&$desktop-sm_crop$');
       } @else {
         display: none;
       }

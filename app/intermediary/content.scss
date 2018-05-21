@@ -1,7 +1,75 @@
 @import 'config';
 
-@include image(
+/* Mobile */
+@include mobile(
+  $name: 'hero-mob',
+  $flush:'ehh',
+  $urlUK:'https://riverisland.scene7.com/is/image/RiverIsland/c20180515_HP_header_mobile_DNT',
+  $url: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180515_HP_header_mobile_DNT_int',
+  $urlFR: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180501_HP_header_mobile_DNT_eu_fr',
+  $urlDE: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180501_HP_header_mobile_DNT_eu_de',
+  $marginBottom:10%
+, $paddingBottom: 194.677% );
+@include mobile(
+  $name: 'hero2-mob',
+  $url: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180418_HP_kids_mobile_DNT'
+, $paddingBottom: 323.710% );
+
+/* Desktop */
+
+@include extend-fw(
   $name: 'hero',
-  $flush: 'r',
-  $marginBottom: 40px
-);
+  $url:'https://riverisland.scene7.com/is/image/RiverIsland/c20180522_HP_background1_DNT',
+  $flush: 'q'
+, $paddingBottom: 39.400% );
+
+@include image(
+  $name: 'hero-inner',
+  $url: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180522_HP_adults_DNT'
+, $paddingBottom: 26.250% );
+.hero-inner {
+  top: 18%;
+  position: absolute;
+  width: 100%;
+}
+
+@include extend-fw(
+  $name: 'promo-1',
+  $url: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180522_HP_background2_DNT',
+  $flush: 'q'
+, $paddingBottom: 37.450% );
+
+@include image(
+  $name: 'promo-1-inner',
+  $url: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180522_HP_kids_DNT'
+, $paddingBottom: 26.250% );
+.promo-1-inner {
+  top: 0%;
+  position: absolute;
+  width: 100%;
+}
+
+.cta-position {
+  position: absolute;
+  width: 19%;
+  left: 51%;
+  text-align: center;
+  z-index: 1;
+}
+.hero .cta-position {
+  bottom: 38%;
+}
+.promo-1 .cta-position {
+  top: 40%;
+  left: 41%;
+}
+.content-wrap .cta-position a.live-cta-light {
+  position: relative;
+  display: inline-block;
+  transform: none;
+  margin: 0 1%;
+  box-sizing: border-box;
+  width: 40%;
+}
+
+
